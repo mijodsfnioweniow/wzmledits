@@ -345,7 +345,7 @@ class MirrorLeechListener:
         if config_dict['EMOJI_THEME']:
             msg = f"<b>╭🗂️ Name: </b><{config_dict['NAME_FONT']}>{escape(name)}</{config_dict['NAME_FONT']}>\n<b>├📐 Size: </b>{size}"
         else:
-            msg = f"<b>╭ Name: </b><{config_dict['NAME_FONT']}>{escape(name)}</{config_dict['NAME_FONT']}>\n<b>├ Size: </b>{size}"
+            msg = f"<b>🗂️ Name: </b><{config_dict['NAME_FONT']}>{escape(name)}</{config_dict['NAME_FONT']}>\n<b> Size: </b>{size}"
 
         if self.isLeech:
             if config_dict['SOURCE_LINK']:
@@ -397,18 +397,18 @@ class MirrorLeechListener:
             if config_dict['EMOJI_THEME']:
                 msg += f'\n<b>├📚 Total Files: </b>{folders}'
             else:
-                msg += f'\n<b>├ Total Files: </b>{folders}'
+                msg += f'\n<b>Total Files: </b>{folders}'
             if typ != 0:
                 if config_dict['EMOJI_THEME']:
                     msg += f'\n<b>├💀 Corrupted Files: </b>{typ}'
                 else:
-                    msg += f'\n<b>├ Corrupted Files: </b>{typ}'
+                    msg += f'\n<b>Corrupted Files: </b>{typ}'
             if config_dict['EMOJI_THEME']:
                 msg += f'\n<b>├⌛ It Tooks:</b> {get_readable_time(time() - self.message.date.timestamp())}'
                 msg += f'\n<b>╰👤 #Leech_by: </b>{self.tag}\n\n'
             else: 
-                msg += f'\n<b>├ It Tooks:</b> {get_readable_time(time() - self.message.date.timestamp())}'
-                msg += f'\n<b>╰ #Leech_by: </b>{self.tag}\n\n'
+                msg += f'\n<b>It Tooks:</b> {get_readable_time(time() - self.message.date.timestamp())}'
+                msg += f'\n<b>Leech_by: </b>{self.tag}\n\n'
 
             if not self.isPrivate and config_dict['SAVE_MSG']:
                 buttons.sbutton('Save This Message', 'save', 'footer')
@@ -467,20 +467,20 @@ class MirrorLeechListener:
             if config_dict['EMOJI_THEME']:
                 msg += f'\n<b>├📦 Type: </b>{typ}'
             else:
-                msg += f'\n<b>├ Type: </b>{typ}'
+                msg += f'\n<b>Type: </b>{typ}'
             if typ == "Folder":
                 if config_dict['EMOJI_THEME']:
                     msg += f'\n<b>├🗃️ SubFolders: </b>{folders}'
                     msg += f'\n<b>├🗂️ Files: </b>{files}'
                 else:
-                    msg += f'\n<b>├ SubFolders: </b>{folders}'
-                    msg += f'\n<b>├ Files: </b>{files}'
+                    msg += f'\n<b>SubFolders: </b>{folders}'
+                    msg += f'\n<b>Files: </b>{files}'
             if config_dict['EMOJI_THEME']:
                 msg += f'\n<b>├⌛ It Tooks:</b> {get_readable_time(time() - self.message.date.timestamp())}'
                 msg += f'\n<b>╰👤 #Mirror_By: </b>{self.tag}\n\n'
             else:
-                msg += f'\n<b>├ It Tooks:</b> {get_readable_time(time() - self.message.date.timestamp())}'
-                msg += f'\n<b>╰ #Mirror_By: </b>{self.tag}\n\n' 
+                msg += f'\n<b>It Took:</b> {get_readable_time(time() - self.message.date.timestamp())}'
+                msg += f'\n<b>Mirror_By: </b>{self.tag}\n\n' 
             buttons = ButtonMaker()
             link = short_url(link, user_id_)
             if config_dict['DISABLE_DRIVE_LINK'] and self.message.chat.type != 'private':
